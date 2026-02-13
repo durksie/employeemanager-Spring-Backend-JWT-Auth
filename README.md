@@ -100,8 +100,6 @@ DELETE /api/employees/{id}
 
 # Future Improvements
 
-* JWT authentication
-
 * Pagination & sorting
 
 * Search/filter endpoints

@@ -2,6 +2,9 @@
 Employee Manager using Spring Boot REST API application that manages employees using full CRUD
 (Create, Read, Update, Delete) operations. It uses MySQL as the database and Spring Data JPA for data
 persistence.
+
+The application now also includes user authentication and authorization, enabling secure access control to API endpoints. This backend service can be integrated with web or mobile frontends.
+
 ## This backend can be integrated with web or mobile frontends.
 # Features
 * Create new employees
@@ -11,6 +14,8 @@ persistence.
 * Delete employees
 * MySQL database integration
 * RESTful API design
+* User authentication (login system)
+* Role-based authorization (secure endpoints)
 
 # Technologies Used
 *Java 25
@@ -82,3 +87,25 @@ PUT /api/employees/{id}
 }
 ## Delete Employee
 DELETE /api/employees/{id}
+
+# Security Notes
+
+* Authentication is required for protected endpoints.
+
+* Users must log in to access secured routes.
+
+* Role-based permissions determine which actions users can perform.
+
+* Passwords are encrypted before storage for security.
+
+# Future Improvements
+
+* JWT authentication
+
+* Pagination & sorting
+
+* Search/filter endpoints
+
+* Docker containerization
+
+* Frontend dashboard

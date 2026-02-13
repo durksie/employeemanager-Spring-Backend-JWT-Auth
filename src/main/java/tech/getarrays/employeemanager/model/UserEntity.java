@@ -21,7 +21,17 @@ public class UserEntity {
             inverseJoinColumns = @JoinColumn(name="role_id",referencedColumnName="id"))
     private List<Role> roles=new ArrayList<>();
 
+    private String password;
+
+
     public UserEntity() {
+    }
+
+    public UserEntity(int id, String password, List<Role> roles, String username) {
+        this.id = id;
+        this.password = password;
+        this.roles = roles;
+        this.username = username;
     }
 
     public int getId() {
@@ -40,6 +50,14 @@ public class UserEntity {
         this.password = password;
     }
 
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -48,20 +66,13 @@ public class UserEntity {
         this.username = username;
     }
 
-    public UserEntity(int id, String username, String password) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-    }
-
     @Override
     public String toString() {
         return "UserEntity{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
+                ", roles=" + roles +
                 ", password='" + password + '\'' +
                 '}';
     }
-
-    private String password;
 }

@@ -29,7 +29,7 @@ public class JWTGenerator {
                 .setSubject(username)        // sets username as token subject
                 .setIssuedAt(currentDate)    // token creation time
                 .setExpiration(expireDate)   // expiry time
-                .signWith(key, SignatureAlgorithm.HS512) // signing algorithm
+                .signWith(key, SignatureAlgorithm.HS256) // signing algorithm
                 .compact();
     }
 

@@ -42,7 +42,7 @@ public class AuthController {
 
 
 //fOR lOGIN
-    @GetMapping("login")
+    @PostMapping ("login")
     public ResponseEntity<AuthResponseDto>login(@RequestBody LoginDto loginDto){
         Authentication authentication= authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginDto.getUsername(),

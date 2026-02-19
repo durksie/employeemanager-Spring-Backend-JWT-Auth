@@ -3,8 +3,9 @@ Employee Manager using Spring Boot REST API application that manages employees u
 (Create, Read, Update, Delete) operations. It uses MySQL as the database and Spring Data JPA for data
 persistence.
 
-The application now also includes user authentication and authorization, enabling secure access control to API endpoints. This backend service can be integrated with web or mobile frontends.
+It uses MySQL for the database and Spring Data JPA for data persistence.
 
+The application now also includes user authentication and JWT-based authorization, enabling secure access control to API endpoints. This backend can be integrated with web or mobile frontends.
 ## This backend can be integrated with web or mobile frontends.
 # Features
 * Create new employees
@@ -13,9 +14,10 @@ The application now also includes user authentication and authorization, enablin
 * Update employee details
 * Delete employees
 * MySQL database integration
-* RESTful API design
-* User authentication (login system)
-* Role-based authorization (secure endpoints)
+* RESTful API design 
+* User authentication (login/register system)
+* JWT token-based authorization (secure endpoints)
+* Role-based permissions (e.g., ADMIN / USER)
 
 # Technologies Used
 *Java 25
@@ -42,6 +44,14 @@ The application now also includes user authentication and authorization, enablin
 # Create Database
 * CREATE DATABASE employeemanager;
 # Application Configuration
+
+# Database Setup (MySQL)
+* Login to MySQL:
+* mysql -u root -p
+
+## Create Database:
+run
+*CREATE DATABASE employeemanager;
 Edit file for database :
 
 ## src/main/resources/application.properties
@@ -62,7 +72,14 @@ Open the project
 * Run EmployeeManagerApplication.java
 You should see:
 Tomcat started on port 8080
- 
+
+API Endpoints
+Authentication Endpoints
+| Endpoint             | Method | Body                                                   | Description                   |
+|---------------------|--------|--------------------------------------------------------|-------------------------------|
+| `/api/auth/register` | POST   | `{ "username": "user1", "password": "password123" }`  | Register a new user           |
+| `/api/auth/login`    | POST   | `{ "username": "user1", "password": "password123" }`  | Login and receive JWT token   |
+
 #  API Endpoints
 ## Create Employee
 Base URL: http://localhost:8080/api/employees

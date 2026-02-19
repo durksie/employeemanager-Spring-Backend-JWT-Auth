@@ -3,7 +3,7 @@ package tech.getarrays.employeemanager.dto;
 import lombok.Data;
 
 @Data
-public class RegisterDto {
+public class LoginDto {
     private String username;
     private String password;
 

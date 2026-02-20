@@ -74,12 +74,29 @@ You should see:
 Tomcat started on port 8080
 
 API Endpoints
-Authentication Endpoints
-| Endpoint             | Method | Body                                                   | Description                   |
-|---------------------|--------|--------------------------------------------------------|-------------------------------|
-| `/api/auth/register` | POST   | `{ "username": "user1", "password": "password123" }`  | Register a new user           |
-| `/api/auth/login`    | POST   | `{ "username": "user1", "password": "password123" }`  | Login and receive JWT token   |
+# Authentication API
+A simple authentication API with JWT token-based authentication.
 
+## API Endpoints
+| Endpoint | Method | Request Body | Description |
+|----------|--------|--------------|-------------|
+| `/api/auth/register` | `POST` | `{ "username": "user1", "password": "password123" }` | Register a new user account |
+| `/api/auth/login` | `POST` | `{ "username": "user1", "password": "password123" }` | Authenticate user and receive JWT token |
+
+## Usage Examples
+
+### Register a new user
+
+curl -X POST http://localhost:3000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"username": "user1", "password": "password123"}'
+Login
+### Login 
+curl -X POST http://localhost:3000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"username": "user1", "password": "password123"}'
+  
+  
 #  API Endpoints
 ## Create Employee
 Base URL: http://localhost:8080/api/employees
